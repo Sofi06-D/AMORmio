@@ -1,0 +1,355 @@
+body {
+    background-color: #8f0808;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+/* Contenedor del área del letrero */
+.contenedor-letrero {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Estilo del título principal */
+h1 {
+    font-family: 'Ole', 'Oleo Script', cursive;
+    text-align: center;
+    color: #f681a4; 
+    font-size: 5rem; 
+    white-space: nowrap; 
+    display: inline-block;               
+    letter-spacing: 15px; 
+    animation: letreroIzquierda 12s linear infinite; 
+}
+
+/* Estilos para tu nuevo texto romántico */
+.texto-romantico {
+    font-family: 'Poppins', sans-serif; /* Una tipografía moderna y muy legible */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Da espacio entre renglones para que se lea suave */
+    color: #ffffff; /* Letras blancas para contrastar con el fondo rojo */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Sombra suave para las letras */
+    max-width: 600px; /* Controla el ancho del bloque de texto */
+    margin: 50px auto; /* Lo centra perfectamente en la página y lo separa del título */
+    padding: 0 25px; /* Evita que toque los bordes en pantallas de celular */
+    text-align: justify; /* Justifica los bordes del texto */
+    font-style: italic; /* Le da un toque inclinado/poético muy elegante */
+}
+
+.imagen-romantica {
+    display: block;
+    margin: 40px auto 60px auto; /* Centra horizontalmente y separa de los demás elementos */
+    max-width: 450px; /* Tamaño máximo ideal para que no se vea gigante */
+    width: 90%; /* Hace que sea adaptable si abres la página en un celular */
+    border: 3px solid #ffffff; /* Un marco blanco elegante */
+    border-radius: 5px; /* Bordes redondeados y suaves */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra para dar efecto de profundidad flotante */
+}
+
+.contenedor-corazon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto 80px auto;
+    width: 100%;
+    height: 250px; /* Espacio suficiente para que el corazón gire y quepa el texto */
+}
+
+.boton-corazon {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background-color: #ff477e; /* Color rosa del corazón */
+    transform: rotate(-45deg); /* Gira el cuadrado base para formar la punta del corazón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Círculo izquierdo del corazón */
+.boton-corazon::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #ff477e;
+    border-radius: 50%;
+    top: -90px;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Círculo derecho del corazón */
+.boton-corazon::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #ff477e;
+    border-radius: 50%;
+    top: 0;
+    left: 90px;
+    transition: background-color 0.3s ease;
+}
+
+/* Contenedor del texto para enderezarlo (ya que el corazón está girado -45deg) */
+.boton-corazon span {
+    position: relative;
+    transform: rotate(45deg); /* Regresa el texto a su posición normal horizontal */
+    z-index: 10; /* Lo pone por encima de las capas del corazón */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.4;
+    padding: 10px;
+    width: 180px; /* Ajusta el texto al ancho interno */
+    pointer-events: none; /* Asegura que el clic pase directo al enlace */
+}
+
+/* Efecto visual tierno al pasar el mouse por encima (hover) */
+.boton-corazon:hover {
+    transform: rotate(-45deg) scale(1.1); /* Crece un poquito manteniendo su rotación */
+    background-color: #ff1256; /* Se vuelve un rojo/rosa más intenso */
+}
+
+.boton-corazon:hover::before,
+.boton-corazon:hover::after {
+    background-color: #ff1256; /* Cambia el color de las partes redondeadas al mismo tiempo */
+}
+
+.area-corazon-texto {
+    display: flex;
+    justify-content: center;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+}
+
+.contenedor-texto-corazon {
+    position: relative;
+    width: 450px;
+    height: 420px;
+    background-color: rgba(255, 71, 126, 0.25); /* Un fondo rosa suave para denotar la silueta */
+    /* Corta el contenedor exactamente con la figura matemática de un corazón */
+    clip-path: polygon(50% 15%, 65% 0%, 85% 0%, 100% 15%, 100% 40%, 85% 65%, 50% 100%, 15% 65%, 0% 40%, 0% 15%, 35% 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.parrafo-corazon {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-align: center;
+    /* Ajustamos los paddings: reducimos el superior a 35px y los lados a 30px */
+    padding: 0px 40px 40px 40px; 
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Flotadores falsos para moldear el texto por la izquierda y derecha imitando curvas */
+.parrafo-corazon::before {
+    content: "";
+    width: 28%;
+    height: 100%;
+    float: left;
+    shape-outside: polygon(0% 0%, 100% 0%, 60% 40%, 100% 75%, 0% 100%);
+}
+
+.parrafo-corazon::after {
+    content: "";
+    width: 28%;
+    height: 100%;
+    float: right;
+    shape-outside: polygon(100% 0%, 0% 0%, 40% 40%, 0% 75%, 100% 100%);
+}
+
+.contenedor-video-romantico {
+    max-width: 550px; /* Tamaño máximo ideal en pantalla */
+    margin: 50px auto 80px auto; /* Centra horizontalmente y da espacio abajo */
+    padding: 0 15px; /* Protección para que no toque los bordes en pantallas móviles */
+}
+
+.video-local-romantico {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ffffff; /* Marco blanco que combina con el letrero */
+    border-radius: 12px; /* Bordes redondeados elegantes */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidad */
+}
+
+/* Animación para que avance de Derecha a Izquierda */
+@keyframes letreroIzquierda {
+    0% {
+        transform: translate(100vw, 0); 
+    }
+    100% {
+        transform: translate(-100%, 0); 
+    }
+}
+
+/* Botón flotante en la esquina inferior derecha */
+.contador-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Se mantiene siempre visible sobre otros elementos */
+
+  /* Diseño compacto y redondeado */
+  background-color: #1e293b; /* Fondo oscuro moderno */
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Alineación del ojo y el número */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Efecto al pasar el cursor */
+.contador-flotante:hover {
+  background-color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* ESTILOS PARA EL FORMULARIO DE CONTACTO */
+.contenedor-formulario {
+    max-width: 550px;
+    margin: 60px auto 100px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco cristalino semi-transparente */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px); /* Efecto difuminado de fondo estilo moderno */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.contenedor-formulario h2 {
+    font-family: 'Ole', 'Oleo Script', cursive;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subtitulo-formulario {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #ffe5ec;
+    margin-bottom: 25px;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.campo-grupo input, 
+.campo-grupo textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Cambia de color el borde cuando la persona hace clic para escribir */
+.campo-grupo input:focus, 
+.campo-grupo textarea:focus {
+    border-color: #ff477e;
+    box-shadow: 0 0 10px rgba(255, 71, 126, 0.5);
+}
+
+.boton-enviar {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff477e; /* Rosa de tus letras */
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.boton-enviar:hover {
+    background-color: #ff1256; /* Se oscurece al pasar el cursor */
+    transform: translateY(-2px); /* Pequeño salto interactivo */
+    box-shadow: 0 6px 20px rgba(255, 18, 86, 0.4);
+}
+
+.contenedor-buscador {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    padding: 0 15px;
+}
+
+#inputBuscador {
+    width: 75%;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #ffffff;
+    border-radius: 8px 0 0 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    outline: none;
+}
+
+.contenedor-buscador button {
+    width: 25%;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    border-left: none; 
+    border-radius: 0 8px 8px 0; 
+    background-color: #ff477e; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contenedor-buscador button:hover {
+    background-color: #ff1256;
+}
